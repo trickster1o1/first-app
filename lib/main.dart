@@ -1,17 +1,12 @@
-import 'dart:html';
-
-import 'package:myapp/pages/profile.dart';
-import 'package:myapp/pages/loading.dart';
-import 'package:myapp/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:world_time_app/pages/home.dart';
+import 'package:world_time_app/pages/loading.dart';
+import 'package:world_time_app/pages/profile.dart';
+import 'package:world_time_app/pages/choose_location.dart';
 
-void main() {
-  runApp(MaterialApp(
-    // initialRoute: '/profile',
-    routes: {
+void main() => runApp(MaterialApp(initialRoute: '/', routes: {
       '/': (context) => Loading(),
-      '/home': (context) => TimeDisp(),
-      '/profile': (profile) => Profile(),
-    },
-  ));
-}
+      '/home': (context) => Home(),
+      '/location': (context) => ChooseLocation(),
+      '/profile': (context) => Profile(),
+    }));

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "myapp" "\0"
+            VALUE "CompanyName", "uk.co.thenetninja" "\0"
+            VALUE "FileDescription", "world_time_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "myapp" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "myapp.exe" "\0"
-            VALUE "ProductName", "myapp" "\0"
+            VALUE "InternalName", "world_time_app" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 uk.co.thenetninja. All rights reserved." "\0"
+            VALUE "OriginalFilename", "world_time_app.exe" "\0"
+            VALUE "ProductName", "world_time_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
