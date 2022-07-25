@@ -10,18 +10,24 @@ class Header extends StatefulWidget {
 class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/home');
-                },
-                child: Icon(Icons.notifications)),
-            TextButton(onPressed: () {}, child: Icon(Icons.person)),
-          ]),
-      backgroundColor: Colors.grey[850],
-    );
+    return
+        //  AppBar(
+        //   title:
+        Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+              child: Icon(Icons.notifications)),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/profile');
+              },
+              child: Icon(Icons.person)),
+        ]);
+    //   backgroundColor: Colors.grey[850],
+    // );
   }
 }
