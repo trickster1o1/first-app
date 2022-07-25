@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
 
-class TimeDisp extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  State<TimeDisp> createState() => _TimeDispState();
+  _HomeState createState() => _HomeState();
 }
 
-class _TimeDispState extends State<TimeDisp> {
+class _HomeState extends State<Home> {
   Map data = {};
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // data = ModalRoute.of(context)?.settings.arguments;
+    data = ModalRoute.of(context).settings.arguments;
+    print(data);
 
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
-        child: Text('The Time'),
+      //appBar: AppBar(),
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            FlatButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                icon: Icon(Icons.edit_location),
+                label: Text('Edit Location')),
+          ],
+        ),
       ),
     );
   }

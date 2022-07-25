@@ -16,14 +16,15 @@ class _LoadingState extends State<Loading> {
     await configTime.getData();
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': configTime.location,
-      'time': configTime.time,
       'flag': configTime.flag,
+      'time': configTime.time
     });
   }
 
   @override
   void initState() {
     super.initState();
+
     setupTime();
   }
 
