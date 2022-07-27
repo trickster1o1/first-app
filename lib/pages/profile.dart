@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:TheTimeApp/header.dart';
 import '../list.dart';
 
 class Profile extends StatefulWidget {
@@ -20,16 +20,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  child: Icon(Icons.notifications)),
-              TextButton(onPressed: () {}, child: Icon(Icons.person)),
-            ]),
+        title: Header(),
         backgroundColor: Colors.grey[850],
       ),
       body: Container(

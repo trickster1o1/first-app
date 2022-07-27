@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:world_time_app/pages/home.dart';
-import 'package:world_time_app/pages/loading.dart';
-import 'package:world_time_app/pages/profile.dart';
-import 'package:world_time_app/pages/choose_location.dart';
+import 'package:TheTimeApp/pages/home.dart';
+import 'package:TheTimeApp/pages/loading.dart';
+import 'package:TheTimeApp/pages/profile.dart';
+import 'package:TheTimeApp/pages/choose_location.dart';
 
 void main() => runApp(MaterialApp(initialRoute: '/', routes: {
       '/': (context) => Loading(),

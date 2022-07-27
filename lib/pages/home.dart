@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:world_time_app/header.dart';
+import 'package:TheTimeApp/header.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context).settings.arguments;
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       // backgroundColor: Colors.grey[900],
@@ -38,8 +38,18 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               FlatButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/location');
+                  onPressed: () async {
+                    dynamic result =
+                        await Navigator.pushNamed(context, '/location');
+                    setState(() {
+                      data = {
+                        'location': result['location'],
+                        'time': result['time'],
+                        'isDay': result['isDay'],
+                        'url': result['url'],
+                        'flag': result['flag'],
+                      };
+                    });
                   },
                   icon: Icon(
                     Icons.edit_location,
@@ -56,7 +66,9 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        data['location'],
+                        data.isNotEmpty && data['location'] != null
+                            ? data['location']
+                            : 'loading...',
                         style: TextStyle(
                           fontSize: 20.0,
                           letterSpacing: 5.0,
@@ -65,7 +77,9 @@ class _HomeState extends State<Home> {
                       ),
                       SizedBox(height: 10.0),
                       Text(
-                        data['time'],
+                        data.isNotEmpty && data['time'] != null
+                            ? data['time']
+                            : 'loading...',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 35.0,
