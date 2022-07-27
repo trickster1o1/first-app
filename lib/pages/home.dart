@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:world_time_app/header.dart';
+import 'package:TheTimeApp/header.dart';
 
 class Home extends StatefulWidget {
   @override

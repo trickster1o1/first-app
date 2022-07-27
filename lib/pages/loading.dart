@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:world_time_app/services/world_time.dart';
+import 'package:TheTimeApp/services/world_time.dart';
 
 class Loading extends StatefulWidget {
   @override

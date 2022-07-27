@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:world_time_app/header.dart';
+import 'package:TheTimeApp/header.dart';
 import '../list.dart';
 
 class Profile extends StatefulWidget {
