@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:TheTimeApp/header.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
-  _HomeState createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
@@ -18,7 +20,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    data = data.isNotEmpty
+        ? data
+        : ModalRoute.of(context)?.settings.arguments as Map<String, Object>;
 
     return Scaffold(
       // backgroundColor: Colors.grey[900],
@@ -30,7 +34,8 @@ class _HomeState extends State<Home> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(data['isDay'] ? '/day.jpg' : '/night.jpg'),
+              image: AssetImage(
+                  data['isDay'] ? 'assets/day.jpg' : 'assets/night.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -65,25 +70,32 @@ class _HomeState extends State<Home> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        data.isNotEmpty && data['location'] != null
-                            ? data['location']
-                            : 'loading...',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          letterSpacing: 5.0,
-                          color: Colors.grey[300],
+                      Container(
+                        padding: EdgeInsets.all(10.0),
+                        color: Colors.red,
+                        child: Text(
+                          data['location'] != null
+                              ? data['location']
+                              : 'loading...',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            letterSpacing: 5.0,
+                            color: Colors.grey[300],
+                          ),
                         ),
                       ),
-                      SizedBox(height: 10.0),
-                      Text(
-                        data.isNotEmpty && data['time'] != null
-                            ? data['time']
-                            : 'loading...',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 35.0,
-                          color: Colors.grey[300],
+                      Container(
+                        padding: const EdgeInsets.all(5.0),
+                        color: Colors.black,
+                        child: Text(
+                          data.isNotEmpty && data['time'] != null
+                              ? data['time']
+                              : 'loading...',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 35.0,
+                            color: Colors.grey[300],
+                          ),
                         ),
                       ),
                     ]),
